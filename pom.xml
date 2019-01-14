@@ -44,7 +44,7 @@
         <version.pt.ist.fenixedu-ist-sas-integration>2.0.0</version.pt.ist.fenixedu-ist-sas-integration>
         <version.org.apache.poi>3.17</version.org.apache.poi>
         <version.pt.ist.fenixedu-ulisboa-cgdIntegration>3.0.0</version.pt.ist.fenixedu-ulisboa-cgdIntegration>
-        <version.pt.ist.fenixedu.idcards>4.0.0</version.pt.ist.fenixedu.idcards>
+        <version.pt.ist.fenixedu.idcards>4.1.0-SNAPSHOT</version.pt.ist.fenixedu.idcards>
         <version.pt.ist.fenixedu.onlinetests>6.0.0</version.pt.ist.fenixedu.onlinetests>
         <version.org.fenixedu.comm-hub>1.1.4</version.org.fenixedu.comm-hub>
     </properties>
@@ -283,6 +283,11 @@
 		      <artifactId>poi-ooxml</artifactId>
 		      <version>${version.org.apache.poi}</version>
 		  </dependency>
+		  <dependency>
+                    <groupId>org.fenixedu</groupId>
+                    <artifactId>comm-hub-sdk-java</artifactId>
+                    <version>${version.org.fenixedu.comm-hub}</version>
+		   </dependency>
     </dependencies>
 
     <profiles>
@@ -303,11 +308,6 @@
                     <groupId>pt.ist</groupId>
                     <artifactId>digitalized-signatures</artifactId>
                     <version>${version.pt.ist.digitalized-signatures}</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.fenixedu</groupId>
-                    <artifactId>comm-hub-sdk-java</artifactId>
-                    <version>${version.org.fenixedu.comm-hub}</version>
                 </dependency>
             </dependencies>
             <repositories>
