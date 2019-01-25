@@ -35,6 +35,7 @@ import org.fenixedu.academic.domain.student.RegistrationProtocol;
 import org.fenixedu.academic.domain.student.Student;
 import org.fenixedu.academic.domain.student.registrationStates.RegistrationState;
 import org.fenixedu.bennu.scheduler.custom.CustomTask;
+import org.fenixedu.idcards.IdCardsConfiguration;
 import org.fenixedu.idcards.domain.SantanderPhotoEntry;
 import org.fenixedu.spaces.domain.Space;
 import org.joda.time.DateTime;
@@ -49,6 +50,7 @@ import pt.ist.fenixedu.contracts.domain.accessControl.ActiveGrantOwner;
 import pt.ist.fenixedu.contracts.domain.accessControl.ActiveResearchers;
 import pt.ist.fenixedu.contracts.domain.personnelSection.contracts.PersonContractSituation;
 import pt.ist.fenixedu.contracts.domain.util.CategoryType;
+import pt.ist.fenixedu.integration.domain.santander.CampusAddress;
 import pt.ist.fenixframework.Atomic.TxMode;
 import pt.ist.fenixframework.FenixFramework;
 import pt.sibscartoes.portal.wcf.IRegistersInfo;
@@ -63,8 +65,8 @@ public class UnitFileTask extends CustomTask {
 
     protected final Logger logger = getLogger();
 
-    final private String USERNAME = "USERNAME";
-    final private String PASSWORD = "PASSWORD";
+    final private String USERNAME = IdCardsConfiguration.getConfiguration().sibsWebServiceUsername();
+    final private String PASSWORD = IdCardsConfiguration.getConfiguration().sibsWebServicePassword();
 
     @Override
     public TxMode getTxMode() {
